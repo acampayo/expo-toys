@@ -1,14 +1,13 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.expotoys"
-        minSdkVersion 21
+        minSdkVersion 26
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -40,7 +39,7 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:3.13.1"
     implementation "com.squareup.okhttp3:logging-interceptor:3.13.1"
     implementation "com.github.bumptech.glide:glide:4.8.0"
-    implementation "com.github.bumptech.glide:compiler:4.8.0"
+    kapt "com.github.bumptech.glide:compiler:4.8.0"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
