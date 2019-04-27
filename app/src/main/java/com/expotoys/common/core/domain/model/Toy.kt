@@ -1,4 +1,4 @@
-package com.expotoys.core.model
+package com.expotoys.common.core.domain.model
 
 data class Toy (
     val name: String,
