@@ -1,7 +1,7 @@
-package com.expotoys.common.data.repository.toy
+package com.expotoys.common.core.data.repository.toy
 
 import com.expotoys.common.core.domain.model.Toy
-import com.expotoys.common.data.datasource.toy.ToysDatasource
+import com.expotoys.common.core.data.datasource.toy.ToysDatasource
 import org.funktionale.tries.Try
 
 internal class ToysRepositoryImpl(

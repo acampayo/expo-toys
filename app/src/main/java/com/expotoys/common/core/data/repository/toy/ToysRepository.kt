@@ -1,4 +1,4 @@
-package com.expotoys.common.data.repository.toy
+package com.expotoys.common.core.data.repository.toy
 
 import com.expotoys.common.core.domain.model.Toy
 import org.funktionale.tries.Try

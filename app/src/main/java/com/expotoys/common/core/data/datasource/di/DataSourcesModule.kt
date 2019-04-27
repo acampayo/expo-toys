@@ -1,7 +1,7 @@
-package com.expotoys.common.data.datasource.di
+package com.expotoys.common.core.data.datasource.di
 
-import com.expotoys.common.data.datasource.toy.ToysApiDataSource
-import com.expotoys.common.data.datasource.toy.ToysDatasource
+import com.expotoys.common.core.data.datasource.toy.ToysApiDataSource
+import com.expotoys.common.core.data.datasource.toy.ToysDatasource
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.instance
