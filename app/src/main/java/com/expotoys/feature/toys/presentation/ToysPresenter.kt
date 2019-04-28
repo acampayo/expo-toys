@@ -3,14 +3,24 @@ package com.expotoys.feature.toys.presentation
 import com.expotoys.common.core.data.repository.toy.ToysRepository
 import com.expotoys.common.core.view.lifecycle.LifecycleView
 import com.expotoys.common.core.view.presentation.LifecyclePresenter
+import com.expotoys.threading.perform
 
 class ToysPresenter(
     private val repository: ToysRepository
 ): LifecyclePresenter<ToysPresenter.View>() {
     override fun onViewAttached(firstTime: Boolean) {
-//        view?.showImage("https://lh3.googleusercontent.com/ImuFV_METViuqNWGrB17w_dC_JKlu3_JiHbDpEWt_ma6F5uzGyla-FDVGT-ktrxz3sq3-JXimjBtqAnWjwAxMESVTYD9FTNkEeHPmbTsXX4EMo0vUKkVI4KmlGi-Q4WfBgGbu82ZL3LjPQQ0VAdPWDVvyEkljppvJZ0OeP7TlGgB2uKQpHEug6BPqK_2LobVlKQtSujiJ1XTfhookXjyelODR-0YZE2qnO8ka26vLTQzJPebnV0x3wTHpr2tpOI6eT6VCNclMlZa0zY9dQ0Nhd0sbZ4RHMIXavGdDc0aVB5g3gzjX-3rCbEpbLX50sXAVEU5pZTJ3twjv6fCcC5lNMy4iuQngpHep_VYJS31XkmfCEPFLmaQgfe_JmIFubyHcU9PXN2jFoKa4zM2CeP2Hvk3q5kmhYo8cfTVRUX_ScGlKqEJtji7vNzSKeumlanISGnWOX5vBGQODvvBYBPyeweXtYSKwPuBdkBWuImBWVZ8izPGKCm1QA78P6CXit7S8vX56i5TQ6StqFchA2v_r799oWkLJ9MdcU-lpqs0gthuOxDYKn3KyWXQxs8m8aRSZlwkmwD3w0MkLTSKkvu6sWpCz3PkcTJU1CX-9HO8qWJPAMn1vW4F1hqfH7sNhKh1Dewau_hhy-WrGuWfd_Un6xp4Q2npBHSxGxYSEkgEKg1E18XAdmAMc4dkUmPZBioA2nP5npDAomm7HnNT3JzvJZtB=w1944-h1458-no")
+        loadToys()
+    }
 
-        view?.showImage("https://lh3.googleusercontent.com/-RT5jLbxNFVObTSLjisMgccGp0TC0_OlJ-Gpi3Rb0ZjgwQMbhgRqtTLNiKME5fbJB_lWpomMGSzBVtAyvqGADbXO6SMCqbuMwqRElMZyxXJlvL6eGtGk3Q4QprSiwHMtY1VBx3Gm0eG-ELzVzpgrQsYt-kluwF167NLjdRAcHBc1S9eMwVM13N6G6UNV32HGa119cqwNC7XbwoOMIGF2H9slhcA9DlkbvvC3kjcJSGBchQRYtFZrV4EZJGuJytRrimMhVe5oXuBdTFxkaiuZtFu-4b72UjfCosNRTSw_Yeck-gQhNS4Vfrx0fCnaOzyyzJnhZeRZMUwzS8qly_7Vuvfx8611f7APUSU8a0FAQ7ibAKc5BzkMhevUnbiEs1aIbBamjicHiJ-aQiHlKIZW63_Zg9YUw0pofWhuWQFTsoXJhvXEYNh4h3BgjMymIO1vVy7y78P14YZBcNIMPnjDm7oTiBIn1epigc3tcwXMe_4lCFkuYjfCsUPW3wpTHneD16zHIDI6RZpd1MrB4B2NCibbmArfBIgA5TfI47wUCMWWqd0ew4R_OX3knl_Kc2Ahic-6AFqERD7LkcvSFpmY9OzrCs1nYXrNogLu2ayzZigprG-jgQ6PoDlS-MtzEMrVo8DF3BUvTEdx9YQy-qNbtTcTjy0EG-o=w2550-h1434-no")
+    private fun loadToys() {
+        bg {
+            repository.getToys().onSuccess { toys ->
+                view?.showImage(toys[1].photos[0])
+            }.onFailure {
+                print("Error loading toys")
+                //TODO: Error control
+            }
+        }
     }
 
     interface View : LifecycleView {

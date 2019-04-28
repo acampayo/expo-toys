@@ -1,5 +1,6 @@
 package com.expotoys.common.api.di
 
+import com.expotoys.BuildConfig
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import org.kodein.di.Kodein
@@ -33,7 +34,7 @@ val apiModule = Kodein.Module(name = "apiModule") {
 
     bind<Retrofit>() with singleton {
         val httpClient: OkHttpClient = instance()
-        buildRetrofit("http://www.google.com", httpClient)
+        buildRetrofit(BuildConfig.BASE_URL, httpClient)
     }
     bind<Moshi>() with provider { moshi }
     bind<OkHttpClient>() with singleton {
