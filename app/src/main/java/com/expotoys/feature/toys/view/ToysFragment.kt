@@ -3,6 +3,7 @@ package com.expotoys.feature.toys.view
 import android.os.Bundle
 import com.bumptech.glide.Glide
 import com.expotoys.R
+import com.expotoys.common.core.domain.model.Toy
 import com.expotoys.common.core.view.BaseFragment
 import com.expotoys.feature.toys.di.featureComponent
 import com.expotoys.feature.toys.presentation.ToysPresenter
@@ -10,6 +11,7 @@ import kotlinx.android.synthetic.main.view_toys.*
 import org.kodein.di.generic.instance
 
 class ToysFragment : BaseFragment(), ToysPresenter.View {
+
     companion object {
         fun newInstance() = ToysFragment()
     }
@@ -22,7 +24,11 @@ class ToysFragment : BaseFragment(), ToysPresenter.View {
         presenter.onViewReady(this)
     }
 
-    override fun showImage(url: String) {
+    override fun renderToys(toys: List<Toy>) {
+
+    }
+
+    fun showImage(url: String) {
         context?.let {
             Glide.with(it)
                 .asBitmap()
