@@ -2,6 +2,7 @@ package com.expotoys.feature.toys.view
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
@@ -83,7 +84,12 @@ class ToyDetailFragment : BaseFragment(), ToyDetailPresenter.View {
     }
 
     override fun renderInstagramUrl(instagramUrl: String, instagramUser: String) {
-        this.instagramUrl.text = instagramUser
+        this.instagramUser.text = instagramUser
+        this.instagramUser.setOnClickListener {
+            val uri = Uri.parse(instagramUrl)
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent)
+        }
     }
 
     override fun renderPhotos(photos: List<String>) {

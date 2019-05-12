@@ -19,7 +19,7 @@
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_marginTop="@dimen/default_margin"
                 android:justificationMode="inter_word"
@@ -62,19 +62,25 @@
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/default_margin"
                 android:justificationMode="inter_word"
                 android:layout_marginRight="@dimen/default_horizontal_margin"
                 android:layout_marginLeft="@dimen/default_horizontal_margin"/>
 
         <TextView
-                android:id="@+id/instagramUrl"
-                android:layout_width="wrap_content"
+                android:id="@+id/instagramUser"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:layout_marginTop="32dp"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"
+                android:clickable="true"
+                android:focusable="true"
                 android:justificationMode="inter_word"
-                android:layout_marginRight="@dimen/default_horizontal_margin"
-                android:layout_marginLeft="@dimen/default_horizontal_margin"/>
+                android:foreground="?attr/selectableItemBackground"
+                android:paddingTop="@dimen/default_margin"
+                android:paddingBottom="@dimen/default_margin"
+                android:paddingRight="@dimen/default_horizontal_margin"
+                android:paddingLeft="@dimen/default_horizontal_margin"/>
 
         <TextView
                 android:id="@+id/biography"
@@ -82,7 +88,6 @@
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:justificationMode="inter_word"
-                android:layout_marginTop="@dimen/default_margin"
                 android:layout_marginRight="@dimen/default_horizontal_margin"
                 android:layout_marginLeft="@dimen/default_horizontal_margin"/>
 
