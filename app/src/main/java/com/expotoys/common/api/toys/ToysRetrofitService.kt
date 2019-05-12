@@ -5,6 +5,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface ToysRetrofitService {
-    @GET("5cc5ed4c2e00004e00594b57")
+    @GET("5ccf4da2300000141652c4da")
     fun getToys(): Call<List<Toy>>
 }

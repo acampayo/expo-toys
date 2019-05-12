@@ -1,5 +1,6 @@
 package com.expotoys.feature.toys.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.view.View
@@ -29,7 +30,13 @@ class ToysFragment : BaseFragment(), ToysPresenter.View {
     override fun renderToys(toys: List<Toy>) {
         context?.let {
             toys_list.layoutManager = GridLayoutManager(it, 2)
-            toys_list.adapter = ToysAdapter(toys)
+            toys_list.adapter = ToysAdapter(toys) { toy ->
+                context?.let { context ->
+                    val intent = Intent(context, ToyDetailActivity::class.java)
+                    intent.putExtra(ToyDetailActivity.TOY_EXTRA, toy)
+                    startActivity(intent)
+                }
+            }
         }
     }
 

@@ -11,7 +11,8 @@ import com.expotoys.common.core.domain.model.Toy
 import kotlinx.android.synthetic.main.adapter_toy.view.*
 
 class ToysAdapter(
-    private val toys: List<Toy>
+    private val toys: List<Toy>,
+    private val onItemClick: (Toy) -> Unit
 ): RecyclerView.Adapter<ToysAdapter.ViewHolder>() {
 
     override fun getItemCount() = toys.size
@@ -21,11 +22,15 @@ class ToysAdapter(
     )
 
     override fun onBindViewHolder(holder: ToysAdapter.ViewHolder, position: Int) {
-        (holder as? ViewHolder)?.bind(toys[position])
+        (holder as? ViewHolder)?.bind(toys[position], onItemClick)
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(toy: Toy) = with(itemView){
+        fun bind(
+            toy: Toy,
+            onItemClick: (Toy) -> Unit
+        ) = with(itemView){
+            card_view.setOnClickListener { onItemClick(toy) }
             name.text = toy.name
             toy.photos.firstOrNull().let {
                 Glide.with(this.context.applicationContext)
