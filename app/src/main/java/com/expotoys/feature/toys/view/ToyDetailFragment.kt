@@ -1,21 +1,25 @@
 package com.expotoys.feature.toys.view
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.expotoys.R
 import com.expotoys.common.core.domain.model.Toy
 import com.expotoys.common.core.view.BaseFragment
 import com.expotoys.common.core.view.withArguments
+import com.expotoys.feature.toys.adapter.ToysDetailAdapter
 import com.expotoys.feature.toys.di.featureComponent
 import com.expotoys.feature.toys.presentation.ToyDetailPresenter
 import kotlinx.android.synthetic.main.view_toy_detail.*
 import kotlinx.android.synthetic.main.view_toy_detail_container.*
 import org.kodein.di.generic.instance
 
-class ToyDetailFragment: BaseFragment(), ToyDetailPresenter.View {
+class ToyDetailFragment : BaseFragment(), ToyDetailPresenter.View {
 
     companion object {
         fun newInstance(toy: Toy) = ToyDetailFragment().withArguments(
@@ -35,7 +39,7 @@ class ToyDetailFragment: BaseFragment(), ToyDetailPresenter.View {
         presenter.onViewReady(this)
     }
 
-    override  fun setupActionBar(artistName: String) {
+    override fun setupActionBar(artistName: String) {
         activity?.let {
             toolbar.title = artistName
             (it as AppCompatActivity).setSupportActionBar(toolbar)
@@ -83,13 +87,9 @@ class ToyDetailFragment: BaseFragment(), ToyDetailPresenter.View {
     }
 
     override fun renderPhotos(photos: List<String>) {
-    }
-
-    override fun showProgress() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun hideProgress() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        context?.let {
+            this.photos.layoutManager = LinearLayoutManager(it, LinearLayoutManager.VERTICAL, false)
+            this.photos.adapter = ToysDetailAdapter(toy.photos)
+        }
     }
 }

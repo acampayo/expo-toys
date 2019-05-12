@@ -41,7 +41,5 @@ class ToyDetailPresenter: LifecyclePresenter<ToyDetailPresenter.View>() {
         fun renderSize(size: String)
         fun renderInstagramUrl(instagramUrl: String, instagramUser: String)
         fun renderPhotos(photos: List<String>)
-        fun showProgress()
-        fun hideProgress()
     }
 }
