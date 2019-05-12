@@ -26,6 +26,7 @@ android {
         }
         buildTypes.each {
             it.buildConfigField 'String', 'BASE_URL', "\"http://www.mocky.io/v2/\""
+            it.buildConfigField 'String', 'ZONA_TOYS_URL', "\"http://www.zonatoys.com/\""
         }
     }
 }
