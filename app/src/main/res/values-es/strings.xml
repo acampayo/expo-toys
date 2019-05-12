@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Expo Toys</string>
+    <string name="toys">TOYS</string>
+    <string name="news">NOTICIAS</string>
     <string name="empty_message">No hay Toys :(</string>
 </resources>
