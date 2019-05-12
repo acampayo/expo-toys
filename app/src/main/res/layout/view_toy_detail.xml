@@ -20,20 +20,84 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:layout_margin="@dimen/default_margin" />
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/default_margin"
+                android:justificationMode="inter_word"
+                android:layout_marginRight="@dimen/default_horizontal_margin"
+                android:layout_marginLeft="@dimen/default_horizontal_margin"/>
+
+        <TextView
+                android:id="@+id/technique"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginTop="@dimen/default_margin"
+                android:justificationMode="inter_word"
+                android:layout_marginRight="@dimen/default_horizontal_margin"
+                android:layout_marginLeft="@dimen/default_horizontal_margin"/>
+
+        <TextView
+                android:id="@+id/size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginTop="@dimen/default_margin"
+                android:justificationMode="inter_word"
+                android:layout_marginRight="@dimen/default_horizontal_margin"
+                android:layout_marginLeft="@dimen/default_horizontal_margin"/>
+
+        <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginTop="@dimen/default_margin"
+                android:justificationMode="inter_word"
+                android:layout_marginRight="@dimen/default_horizontal_margin"
+                android:layout_marginLeft="@dimen/default_horizontal_margin"/>
+
+        <TextView
+                android:id="@+id/total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginTop="@dimen/default_margin"
+                android:justificationMode="inter_word"
+                android:layout_marginRight="@dimen/default_horizontal_margin"
+                android:layout_marginLeft="@dimen/default_horizontal_margin"/>
+
+        <TextView
+                android:id="@+id/instagramUrl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginTop="32dp"
+                android:justificationMode="inter_word"
+                android:layout_marginRight="@dimen/default_horizontal_margin"
+                android:layout_marginLeft="@dimen/default_horizontal_margin"/>
+
+        <TextView
+                android:id="@+id/biography"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:justificationMode="inter_word"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginRight="@dimen/default_horizontal_margin"
+                android:layout_marginLeft="@dimen/default_horizontal_margin"/>
 
         <android.support.v7.widget.RecyclerView
-                android:id="@+id/tvShowsList"
+                android:id="@+id/photos"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="@dimen/default_margin"
-                android:background="@android:color/white" />
+                android:background="@android:color/white"/>
 
         <ProgressBar
                 android:id="@+id/progress"
                 android:layout_margin="@dimen/default_margin"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
     </LinearLayout>
 

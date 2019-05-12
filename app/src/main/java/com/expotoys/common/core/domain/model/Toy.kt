@@ -4,13 +4,15 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class Toy (
+    val artist: String = "",
     val name: String = "",
     val technique: String = "",
     val size: String = "",
     val description: String = "",
     val biography: String = "",
-    val price: String = "",
+    //val price: Double = 0.0,
     val instagramUrl: String = "",
+    val instagramUser: String = "",
     val paypalAccount: String = "",
     val photos: List<String> = listOf()
 ) : Parcelable {
@@ -21,19 +23,23 @@ data class Toy (
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
+        //parcel.readDouble(),
+        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.createStringArrayList()
     )
 
     override fun writeToParcel(parcel: Parcel?, p1: Int) {
+        parcel?.writeString(artist)
         parcel?.writeString(name)
         parcel?.writeString(technique)
         parcel?.writeString(size)
         parcel?.writeString(description)
         parcel?.writeString(biography)
-        parcel?.writeString(price)
+        //parcel?.writeDouble(price)
         parcel?.writeString(instagramUrl)
+        parcel?.writeString(instagramUser)
         parcel?.writeString(paypalAccount)
         parcel?.writeStringList(photos)
     }
@@ -49,4 +55,7 @@ data class Toy (
             return arrayOfNulls(size)
         }
     }
+
+//    val totalPrice: Double
+//        get() = price + (price * 0.4)
 }

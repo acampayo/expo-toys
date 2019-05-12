@@ -1,6 +1,8 @@
 package com.expotoys.feature.toys.view
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.expotoys.R
@@ -33,6 +35,15 @@ class ToyDetailFragment: BaseFragment(), ToyDetailPresenter.View {
         presenter.onViewReady(this)
     }
 
+    override  fun setupActionBar(artistName: String) {
+        activity?.let {
+            toolbar.title = artistName
+            (it as AppCompatActivity).setSupportActionBar(toolbar)
+            it.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+            toolbar.setNavigationOnClickListener { activity?.finish() }
+        }
+    }
+
     override fun renderBigImage(imageUrl: String) {
         context?.let { context ->
             Glide.with(context)
@@ -44,6 +55,34 @@ class ToyDetailFragment: BaseFragment(), ToyDetailPresenter.View {
 
     override fun renderName(name: String) {
         this.name.text = name
+    }
+
+    override fun renderTechnique(technique: String) {
+        this.technique.text = technique
+    }
+
+    @SuppressLint("SetTextI18n")
+    override fun renderTotalPrice(totalPrice: Double) {
+        this.total_price.text = totalPrice.toString() + "€"
+    }
+
+    override fun renderDescription(description: String) {
+        this.description.text = description
+    }
+
+    override fun renderBiography(biography: String) {
+        this.biography.text = biography
+    }
+
+    override fun renderSize(size: String) {
+        this.size.text = size
+    }
+
+    override fun renderInstagramUrl(instagramUrl: String, instagramUser: String) {
+        this.instagramUrl.text = instagramUser
+    }
+
+    override fun renderPhotos(photos: List<String>) {
     }
 
     override fun showProgress() {

@@ -17,14 +17,30 @@ class ToyDetailPresenter: LifecyclePresenter<ToyDetailPresenter.View>() {
         if (photos.isNotEmpty()) {
             view.renderBigImage(photos.first())
         }
+        view.setupActionBar(view.toy.artist)
         view.renderName(view.toy.name)
+        //view.renderTotalPrice(view.toy.totalPrice)
+        view.renderDescription(view.toy.description)
+        view.renderBiography(view.toy.biography)
+        view.renderTechnique(view.toy.technique)
+        view.renderSize(view.toy.size)
+        view.renderInstagramUrl(view.toy.instagramUrl, view.toy.instagramUser)
+        view.renderPhotos(view.toy.photos)
     }
 
     interface View: LifecycleView {
         val toy: Toy
 
         fun renderBigImage(imageUrl: String)
+        fun setupActionBar(artistName: String)
         fun renderName(name: String)
+        fun renderTotalPrice(totalPrice: Double)
+        fun renderDescription(description: String)
+        fun renderBiography(biography: String)
+        fun renderTechnique(technique: String)
+        fun renderSize(size: String)
+        fun renderInstagramUrl(instagramUrl: String, instagramUser: String)
+        fun renderPhotos(photos: List<String>)
         fun showProgress()
         fun hideProgress()
     }

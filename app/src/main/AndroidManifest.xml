@@ -15,8 +15,7 @@
 
         <activity
                 android:name=".feature.toys.view.ToysActivity"
-                android:label="@string/app_name"
-                android:launchMode="singleTask">
+                android:label="@string/app_name">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +25,7 @@
 
         <activity
                 android:name=".feature.toys.view.ToyDetailActivity"
+                android:theme="@style/AppTheme.NoActionBar"
                 android:label="">
         </activity>
     </application>

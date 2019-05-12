@@ -31,7 +31,7 @@ class ToysAdapter(
             onItemClick: (Toy) -> Unit
         ) = with(itemView){
             card_view.setOnClickListener { onItemClick(toy) }
-            name.text = toy.name
+            artist.text = toy.artist
             toy.photos.firstOrNull().let {
                 Glide.with(this.context.applicationContext)
                     .load(it)

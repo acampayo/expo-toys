@@ -3,4 +3,5 @@
     <dimen name="poster_height">270dp</dimen>
     <dimen name="app_bar_height">300dp</dimen>
     <dimen name="default_margin">16dp</dimen>
+    <dimen name="default_horizontal_margin">24dp</dimen>
 </resources>
