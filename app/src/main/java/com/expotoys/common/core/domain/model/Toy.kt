@@ -10,7 +10,6 @@ data class Toy (
     val size: String = "",
     val description: String = "",
     val biography: String = "",
-    //val price: Double = 0.0,
     val instagramUrl: String = "",
     val instagramUser: String = "",
     val paypalAccount: String = "",
@@ -23,7 +22,6 @@ data class Toy (
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-        //parcel.readDouble(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
@@ -37,7 +35,6 @@ data class Toy (
         parcel?.writeString(size)
         parcel?.writeString(description)
         parcel?.writeString(biography)
-        //parcel?.writeDouble(price)
         parcel?.writeString(instagramUrl)
         parcel?.writeString(instagramUser)
         parcel?.writeString(paypalAccount)
@@ -55,7 +52,4 @@ data class Toy (
             return arrayOfNulls(size)
         }
     }
-
-//    val totalPrice: Double
-//        get() = price + (price * 0.4)
 }
