@@ -19,7 +19,6 @@ class ToyDetailPresenter: LifecyclePresenter<ToyDetailPresenter.View>() {
         }
         view.setupActionBar(view.toy.artist)
         view.renderName(view.toy.name)
-        //view.renderTotalPrice(view.toy.totalPrice)
         view.renderDescription(view.toy.description)
         view.renderBiography(view.toy.biography)
         view.renderTechnique(view.toy.technique)
@@ -34,7 +33,6 @@ class ToyDetailPresenter: LifecyclePresenter<ToyDetailPresenter.View>() {
         fun renderBigImage(imageUrl: String)
         fun setupActionBar(artistName: String)
         fun renderName(name: String)
-        fun renderTotalPrice(totalPrice: Double)
         fun renderDescription(description: String)
         fun renderBiography(biography: String)
         fun renderTechnique(technique: String)

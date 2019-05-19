@@ -66,11 +66,6 @@ class ToyDetailFragment : BaseFragment(), ToyDetailPresenter.View {
         this.technique.text = technique
     }
 
-    @SuppressLint("SetTextI18n")
-    override fun renderTotalPrice(totalPrice: Double) {
-        this.total_price.text = totalPrice.toString() + "€"
-    }
-
     override fun renderDescription(description: String) {
         this.description.text = description
     }
