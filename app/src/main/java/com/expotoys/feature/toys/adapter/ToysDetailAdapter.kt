@@ -27,12 +27,10 @@ class ToysDetailAdapter(
         fun bind(
             photo: String
         ) = with(itemView){
-            photo.firstOrNull().let {
-                Glide.with(this.context.applicationContext)
-                    .load(it)
-                    .transition(DrawableTransitionOptions.withCrossFade())
-                    .into(toy_image)
-            }
+            Glide.with(this.context.applicationContext)
+                .load(photo)
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(toy_image)
         }
     }
 }
