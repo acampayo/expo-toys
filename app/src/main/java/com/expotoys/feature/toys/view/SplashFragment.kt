@@ -20,6 +20,7 @@ class SplashFragment : BaseFragment() {
             context?.let {
                 val intent = Intent(it, ToysActivity::class.java)
                 startActivity(intent)
+                activity?.finish()
             }
         }
     }
